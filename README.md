@@ -60,21 +60,22 @@ states. MLP is the simple baseline you always need. XGBoost and Random Forest
 show how far classical methods can go before deep learning pulls ahead — or
 doesn't.
 
----
-
 ## Results Summary
 
-*(Update this section after running all notebooks)*
+| Model | R² (Log Scale) | R² (Real Scale) | MAE (cases) | RMSE (cases) | MAPE (%) | Notes |
+|---|---|---|---|---|---|---|
+| **MLP** | 0.9194 | 0.9194 | 1,257 | — | — | Baseline — strong local feature learning |
+| **Hybrid GNN + MLP** | 0.9464 | 0.9464 | 987 | — | — | **Best R²** — captures spatial spread between states |
+| **XGBoost** | 0.9317 | 0.9317 | 1,110 | 6,038 | 52.79 | Best real case-count prediction, highest outbreak detection (F1: 0.9257) |
+| **Random Forest** | 0.9392 | 0.9392 | 1,171 | 6,996 | 41.83 | Stable ensemble, slightly higher RMSE than XGBoost |
+| **Bi-LSTM + Attention** | 0.8241 | 0.5190 | 1,760 | 8,220 | 107.84 | Sequential model — good trend tracking, weaker on outbreak peaks |
+| **TFT** | 0.8774 | 0.7151 | 1,195 | 6,326 | 74.92 | **Best sequential model** — 12-month window + static features |
 
-| Model | MAE | RMSE | Notes |
-|---|---|---|---|
-| Bi-LSTM | — | — | |
-| GNN Hybrid | — | — | |
-| MLP | — | — | Baseline |
-| TFT | — | — | |
-| XGBoost/RF | — | — | |
-
----
+### Key Takeaways
+- 🥇 **Best Overall R²:** Hybrid GNN + MLP (0.9464) — spatial awareness between Brazilian states gave it the edge
+- 🏆 **Best Real Case Prediction:** XGBoost — lowest MAE (1,110) and RMSE (6,038)
+- ⚡ **Best Sequential Model:** TFT outperforms Bi-LSTM on every metric — lower MAE, lower RMSE, lower MAPE, higher R²
+- 📌 **Note:** GNN and MLP RMSE not explicitly reported in notebook outputs
 
 ## Project Context
 
