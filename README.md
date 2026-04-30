@@ -75,7 +75,7 @@ doesn't.
 - 🥇 **Best Overall R²:** Hybrid GNN + MLP (0.9464) — spatial awareness between Brazilian states gave it the edge
 - 🏆 **Best Real Case Prediction:** XGBoost — lowest MAE (1,110) and RMSE (6,038)
 - ⚡ **Best Sequential Model:** TFT outperforms Bi-LSTM on every metric — lower MAE, lower RMSE, lower MAPE, higher R²
-- 📌 **Note:** GNN and MLP RMSE not explicitly reported in notebook outputs
+
 
 ## Project Context
 
